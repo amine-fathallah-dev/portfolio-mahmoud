@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0B1120"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="600" cy="315" r="400" fill="url(#glow)"/>
+  <!-- Dot grid pattern -->
+  <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#06B6D4" opacity="0.15"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Name -->
+  <text x="600" y="260" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">MAHMOUD CHATER</text>
+  <!-- Role -->
+  <text x="600" y="330" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#06B6D4" text-anchor="middle">Technicien Support Informatique N2/N3</text>
+  <!-- Separator -->
+  <line x1="450" y1="365" x2="750" y2="365" stroke="#06B6D4" stroke-width="2" opacity="0.4"/>
+  <!-- Sub-info -->
+  <text x="600" y="400" font-family="system-ui, sans-serif" font-size="20" fill="#94A3B8" text-anchor="middle">Intune · SCCM · Active Directory · Azure AD · PowerShell · ServiceNow</text>
+  <!-- Location -->
+  <text x="600" y="450" font-family="system-ui, sans-serif" font-size="18" fill="#64748B" text-anchor="middle">Le Vésinet (78110) · linkedin.com/in/chatermahmoud</text>
+</svg>
