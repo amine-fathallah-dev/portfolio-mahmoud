@@ -1,22 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { content } from "@/content/portfolio";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const { locale, setLocale } = useLang();
-  const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const t = content[locale];
 
   useEffect(() => {
-    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -29,8 +25,6 @@ export default function Navbar() {
     { href: "#education", label: t.nav.education },
     { href: "#contact", label: t.nav.contact },
   ];
-
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <header
@@ -80,17 +74,6 @@ export default function Navbar() {
           >
             {locale === "fr" ? "EN" : "FR"}
           </button>
-
-          {/* Theme toggle */}
-          {mounted && (
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-all duration-200"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
-            </button>
-          )}
 
           {/* Mobile menu toggle */}
           <button
